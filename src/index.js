@@ -6,9 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.send("Funcionando");
-});
+require("./controllers/authController")(app);
 
 const port = process.env.PORT || 3000;
 
